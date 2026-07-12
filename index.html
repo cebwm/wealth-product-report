@@ -55,7 +55,52 @@
   .market-editor { padding: 32px 20px; }
   .disclaimer { padding: 24px 20px; }
 }
-`/* ========== Reset & Variables ========== */
+`/* ========== Product Table Enhanced ========== */
+.prod-name { font-size: 14px; font-weight: 500; line-height: 1.3; }
+.num-cell { text-align: center; font-variant-numeric: tabular-nums; }
+.bench-cell { font-size: 13px; line-height: 1.4; }
+.date-cell { text-align: center; font-size: 13px; white-space: nowrap; }
+.product-table tbody td:first-child { min-width: 160px; }
+.prod-detail {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 16px 20px;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.prod-detail-header {
+  font-weight: 600; color: var(--purple-900);
+  margin-bottom: 8px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-100);
+}
+.detail-item { display: flex; gap: 12px; margin-top: 8px; }
+.detail-label {
+  flex-shrink: 0; font-weight: 600;
+  color: var(--purple-500); min-width: 60px;
+}
+.perf-data {
+  background: var(--purple-50);
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid var(--purple-100);
+}
+@media (max-width: 768px) {
+  .prod-name { font-size: 13px; }
+  .bench-cell { font-size: 12px; }
+  .date-cell { font-size: 12px; }
+  .product-table tbody td:first-child { min-width: 120px; }
+  .detail-item { flex-direction: column; gap: 4px; }
+  .prod-detail { padding: 12px 14px; }
+}
+@media (max-width: 480px) {
+  .prod-name { font-size: 12px; }
+  .bench-cell { font-size: 11px; }
+}
+/* ========== Reset & Variables ========== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --purple-900: #2d0f4a;
@@ -415,99 +460,170 @@ section + section { border-top: 1px solid var(--gray-200); }
       <table class="product-table">
         <thead>
           <tr>
-            <th style="width:36%">产品名称</th>
-            <th style="width:20%">产品代码</th>
-            <th style="width:16%">类型</th>
-            <th style="width:28%">投向</th>
+            <th style="width:20%">产品名称</th>
+            <th style="width:10%">类型</th>
+            <th style="width:7%">期限</th>
+            <th style="width:25%">业绩基准</th>
+            <th style="width:12%">募集期</th>
+            <th style="width:14%">到期日</th>
+            <th style="width:12%">额度</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>阳光橙鑫盈打新策略优选目标盈17期（封闭式）</td>
-            <td><span class="product-code">EW8179</span></td>
+            <td><div class="prod-name">阳光橙鑫盈打新策略优选目标盈17期（封闭式）</div><span class="product-code">EW8179</span></td>
             <td><span class="product-type-badge badge-chengxin">橙系列</span></td>
-            <td>混合类</td>
+            <td class="num-cell">15M</td>
+            <td class="bench-cell">2.10%-3.10%，目标2.50%</td>
+            <td class="date-cell">7/15-7/15</td>
+            <td class="date-cell">2027/11/02</td>
+            <td class="num-cell">15亿</td>
           </tr>
           <tr>
-            <td>阳光金丰利长安1228期</td>
-            <td><span class="product-code">EW8229</span></td>
+            <td><div class="prod-name">阳光金丰利长安1228期</div><span class="product-code">EW8229</span></td>
             <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
-            <td>固定收益类</td>
+            <td class="num-cell">24M</td>
+            <td class="bench-cell">A：2.05%<br>B：2.10%<br>V：2.15%</td>
+            <td class="date-cell">7/16-7/22</td>
+            <td class="date-cell">2028/07/24</td>
+            <td class="num-cell">20亿</td>
           </tr>
           <tr>
-            <td>阳光金丰利1163期</td>
-            <td><span class="product-code">EW7765</span></td>
+            <td><div class="prod-name">阳光金丰利1163期</div><span class="product-code">EW7765</span></td>
             <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
-            <td>固定收益类</td>
+            <td class="num-cell">15M</td>
+            <td class="bench-cell">A：2.10%-2.60%<br>J：2.15%-2.65%<br>K：2.20%-2.70%</td>
+            <td class="date-cell">7/16-7/22</td>
+            <td class="date-cell">2027/11/01</td>
+            <td class="num-cell">20亿</td>
           </tr>
           <tr>
-            <td>阳光金创盈乐盈目标盈22期（封闭式）</td>
-            <td><span class="product-code">EW7803</span></td>
-            <td><span class="product-type-badge badge-chengying">创盈系列</span></td>
-            <td>固定收益类（目标盈）</td>
-          </tr>
-          <tr>
-            <td>阳光橙安盈增强欣享22期（封闭式）</td>
-            <td><span class="product-code">EW8191</span></td>
-            <td><span class="product-type-badge badge-chengxin">橙系列</span></td>
-            <td>混合类</td>
-          </tr>
-          <tr>
-            <td>阳光金丰利1229期</td>
-            <td><span class="product-code">EW8230</span></td>
-            <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
-            <td>固定收益类</td>
-          </tr>
-          <tr>
-            <td>阳光金乐盈目标盈20期</td>
-            <td><span class="product-code">EW7800</span></td>
+            <td><div class="prod-name">阳光金创盈乐盈目标盈22期（封闭式）</div><span class="product-code">EW7803</span></td>
             <td><span class="product-type-badge badge-leying">乐盈系列</span></td>
-            <td>固定收益类（目标盈）</td>
+            <td class="num-cell">15M</td>
+            <td class="bench-cell">2.20%-3.20%，目标2.60%</td>
+            <td class="date-cell">7/16-7/22</td>
+            <td class="date-cell">2027/11/02</td>
+            <td class="num-cell">30亿</td>
           </tr>
           <tr>
-            <td>阳光金丰利长安1230期</td>
-            <td><span class="product-code">EW8231</span></td>
+            <td><div class="prod-name">阳光橙安盈增强欣享22期（封闭式）</div><span class="product-code">EW8191</span></td>
+            <td><span class="product-type-badge badge-chengxin">橙系列</span></td>
+            <td class="num-cell">18M</td>
+            <td class="bench-cell">A：2.30%-2.90%<br>B：2.35%-2.95%<br>V：2.40%-3.00%</td>
+            <td class="date-cell">7/16-7/22</td>
+            <td class="date-cell">2028/01/19</td>
+            <td class="num-cell">18亿</td>
+          </tr>
+          <tr>
+            <td><div class="prod-name">阳光金丰利1229期</div><span class="product-code">EW8230</span></td>
             <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
-            <td>固定收益类</td>
+            <td class="num-cell">15M</td>
+            <td class="bench-cell">A：2.10%-2.60%<br>B：2.15%-2.65%<br>V：2.20%-2.70%</td>
+            <td class="date-cell">7/16-7/29</td>
+            <td class="date-cell">2027/11/01</td>
+            <td class="num-cell">20亿</td>
           </tr>
           <tr>
-            <td>阳光金丰利1130期D（跟销）</td>
-            <td><span class="product-code">EW7709</span></td>
+            <td><div class="prod-name">阳光金乐盈目标盈20期</div><span class="product-code">EW7800</span></td>
+            <td><span class="product-type-badge badge-leying">乐盈系列</span></td>
+            <td class="num-cell">18M</td>
+            <td class="bench-cell">2.25%-3.25%，目标2.60%</td>
+            <td class="date-cell">7/16-7/29</td>
+            <td class="date-cell">2028/02/15</td>
+            <td class="num-cell">30亿</td>
+          </tr>
+          <tr>
+            <td><div class="prod-name">阳光金丰利长安1230期</div><span class="product-code">EW8231</span></td>
             <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
-            <td>固定收益类</td>
+            <td class="num-cell">36M</td>
+            <td class="bench-cell">A：2.15%<br>J：2.20%<br>K：2.25%</td>
+            <td class="date-cell">7/16-7/29</td>
+            <td class="date-cell">2029/07/25</td>
+            <td class="num-cell">20亿</td>
           </tr>
           <tr>
-            <td>阳光金丰利1183期D（跟销）</td>
-            <td><span class="product-code">EW7904</span></td>
+            <td><div class="prod-name">阳光金丰利1130期D（跟销）</div><span class="product-code">EW7709</span></td>
             <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
-            <td>固定收益类</td>
+            <td class="num-cell">6M</td>
+            <td class="bench-cell">2.18%-2.58%</td>
+            <td class="date-cell">7/17-7/22</td>
+            <td class="date-cell">2027/01/20</td>
+            <td class="num-cell">5亿</td>
           </tr>
           <tr>
-            <td>阳光金安心计划166期</td>
-            <td><span class="product-code">EW7740</span></td>
+            <td><div class="prod-name">阳光金丰利1183期D（跟销）</div><span class="product-code">EW7904</span></td>
+            <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
+            <td class="num-cell">6M</td>
+            <td class="bench-cell">2.30%-2.70%</td>
+            <td class="date-cell">7/17-7/22</td>
+            <td class="date-cell">2027/06/22</td>
+            <td class="num-cell">5亿</td>
+          </tr>
+          <tr>
+            <td><div class="prod-name">阳光金安心计划166期</div><span class="product-code">EW7740</span></td>
             <td><span class="product-type-badge badge-anxin">安心系列</span></td>
-            <td>固定收益类</td>
+            <td class="num-cell">6M</td>
+            <td class="bench-cell">A：1.75%<br>K：1.80%</td>
+            <td class="date-cell">7/17-7/29</td>
+            <td class="date-cell">2027/01/25</td>
+            <td class="num-cell">20亿</td>
           </tr>
           <tr>
-            <td>阳光橙安盈增强11号（15M定开）</td>
-            <td><span class="product-code">EW8188</span></td>
+            <td><div class="prod-name">阳光橙安盈增强11号（15M定开）</div><span class="product-code">EW8188</span></td>
             <td><span class="product-type-badge badge-chengxin">橙系列</span></td>
-            <td>混合类</td>
+            <td class="num-cell">15M</td>
+            <td class="bench-cell">A：2.25%-2.85%<br>V：2.35%-2.95%</td>
+            <td class="date-cell">7/17-7/29</td>
+            <td class="date-cell">2027/10/30</td>
+            <td class="num-cell">12亿</td>
           </tr>
           <tr>
-            <td>阳光金乐盈目标盈21期（封闭式）</td>
-            <td><span class="product-code">EW8262</span></td>
+            <td><div class="prod-name">阳光金乐盈目标盈21期（封闭式）</div><span class="product-code">EW8262</span></td>
             <td><span class="product-type-badge badge-leying">乐盈系列</span></td>
-            <td>固定收益类（目标盈）</td>
+            <td class="num-cell">15M</td>
+            <td class="bench-cell">2.20%-3.20%，目标2.60%</td>
+            <td class="date-cell">7/23-7/27</td>
+            <td class="date-cell">2027/11/02</td>
+            <td class="num-cell">30亿</td>
           </tr>
         </tbody>
       </table>
-      <div class="product-dir">投向说明以产品发行时的《产品说明书》为准。资料包为辅助信息，仅供内部参考。</div>
     </div>
+      <div class="prod-detail">
+        <div class="prod-detail-header">
+          <span class="product-code">EW8179</span> 阳光橙鑫盈打新策略优选目标盈17期（封闭式）
+        </div>        <div class="detail-item">
+          <span class="detail-label">说明</span>
+          <span>55%固收+40%（复制上证50指数、对冲、打新）+5%流动性管理</span>
+        </div>        <div class="detail-item">
+          <span class="detail-label">吸金优势</span>
+          <span>主投固定收益债券组合<br>可参与新股打新     <br>设定止盈目标收益率</span>
+        </div>      </div>
+      <div class="prod-detail">
+        <div class="prod-detail-header">
+          <span class="product-code">EW8229</span> 阳光金丰利长安1228期
+        </div>        <div class="detail-item">
+          <span class="detail-label">说明</span>
+          <span>90%期限匹配债券+40%存款专户/摊余债基+20%非标（150%杠杆增厚收益）</span>
+        </div>        <div class="detail-item">
+          <span class="detail-label">吸金优势</span>
+          <span>底层资产以固收类为主（期限匹配债券）<br>底层配置杠杆增厚收益<br>收益确定性相对较高、运作方式简单透明</span>
+        </div>      </div>
+      <div class="prod-detail">
+        <div class="prod-detail-header">
+          <span class="product-code">EW8191</span> 阳光橙安盈增强欣享22期（封闭式）
+        </div>        <div class="detail-item">
+          <span class="detail-label">说明</span>
+          <span>50%优先股+8%信用债+25%非标+17.5%策略（15%股票打新、2%股票定增折价、0.5%股票+ETF轮动）</span>
+        </div>        <div class="detail-item">
+          <span class="detail-label">吸金优势</span>
+          <span>优先股资源<br>权益部分采用多元策略，充分发挥多资产配置分散作用<br>封闭管理，自动到账</span>
+        </div>      </div>
+
   </div>
 </section>
 
-<section id="performance">
   <div class="container">
     <div class="section-header">
       <h2>业绩测算</h2>
