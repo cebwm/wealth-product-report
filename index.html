@@ -3,9 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>本周新发公募产品资料包 | 光大理财</title>
+<title>财富管理部——本周新发公募产品资料包</title>
 <style>
-/* ========== Reset & Variables ========== */
+/* ========== CEBWM Logo ========== */
+.cebwm-logo {
+  font-family: "Arial Black", "Franklin Gothic Heavy", "Impact", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, var(--gold-400) 0%, var(--gold-500) 40%, var(--gold-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  display: inline-block;
+  line-height: 1;
+}
+.brand-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .header-inner { height: auto; padding: 10px 0; flex-wrap: wrap; gap: 8px; }
+  .header-brand { width: 100%; }
+  .brand-title { font-size: 13px; white-space: normal; line-height: 1.3; }
+  .header nav { margin-left: 0; width: 100%; justify-content: flex-start; }
+  .header nav a { font-size: 13px; padding: 6px 10px; }
+  .header .date-tag { display: none; }
+  section { padding: 28px 0; }
+  .section-header h2 { font-size: 20px; }
+  .perf-grid { grid-template-columns: 1fr; gap: 14px; }
+  .product-table { font-size: 13px; }
+  .product-table th, .product-table td { padding: 10px 8px; }
+  .market-editor { padding: 32px 20px; }
+  .disclaimer { padding: 24px 20px; }
+.brand-title { font-size: 16px; font-weight: 600; letter-spacing: 0.5px; white-space: nowrap; }
+@media (max-width: 768px) {
+  .header-inner { height: auto; padding: 10px 0; flex-wrap: wrap; gap: 8px; }
+  .header-brand { width: 100%; }
+  .brand-title { font-size: 13px; white-space: normal; line-height: 1.3; }
+  .header nav { margin-left: 0; width: 100%; justify-content: flex-start; }
+  .header nav a { font-size: 13px; padding: 6px 10px; }
+  .header .date-tag { display: none; }
+  section { padding: 28px 0; }
+  .section-header h2 { font-size: 20px; }
+  .perf-grid { grid-template-columns: 1fr; gap: 14px; }
+  .product-table { font-size: 13px; }
+  .product-table th, .product-table td { padding: 10px 8px; }
+  .market-editor { padding: 32px 20px; }
+  .disclaimer { padding: 24px 20px; }
+}
+`/* ========== Reset & Variables ========== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --purple-900: #2d0f4a;
@@ -43,20 +93,6 @@ body {
 }
 a { color: var(--purple-600); text-decoration: none; }
 a:hover { color: var(--purple-800); }
-
-/* ========== Hero Banner ========== */
-.hero-banner {
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-.hero-banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-height: 320px;
-  object-fit: cover;
-}
 
 /* ========== Header ========== */
 .header {
@@ -205,6 +241,7 @@ section + section { border-top: 1px solid var(--gray-200); }
 .badge-chengying { background: #fce4ec; color: #c62828; }
 .badge-chengxin { background: #f3e5f5; color: #6a1b9a; }
 .badge-leying { background: #e8f5e8; color: #2e7d32; }
+.badge-anxin { background: #fff3e0; color: #e65100; }
 
 .product-dir {
   margin-top: 12px;
@@ -301,8 +338,20 @@ section + section { border-top: 1px solid var(--gray-200); }
 
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
-  .header-inner { height: auto; padding: 12px 0; flex-wrap: wrap; }
-  .header-brand { font-size: 16px; }
+  .header-inner { height: auto; padding: 10px 0; flex-wrap: wrap; gap: 8px; }
+  .header-brand { width: 100%; }
+  .brand-title { font-size: 13px; white-space: normal; line-height: 1.3; }
+  .header nav { margin-left: 0; width: 100%; justify-content: flex-start; }
+  .header nav a { font-size: 13px; padding: 6px 10px; }
+  .header .date-tag { display: none; }
+  section { padding: 28px 0; }
+  .section-header h2 { font-size: 20px; }
+  .perf-grid { grid-template-columns: 1fr; gap: 14px; }
+  .product-table { font-size: 13px; }
+  .product-table th, .product-table td { padding: 10px 8px; }
+  .market-editor { padding: 32px 20px; }
+  .disclaimer { padding: 24px 20px; }
+}
   .header nav { margin-left: 0; width: 100%; }
   .header .date-tag { display: none; }
   section { padding: 32px 0; }
@@ -310,12 +359,19 @@ section + section { border-top: 1px solid var(--gray-200); }
   .perf-grid { grid-template-columns: 1fr; }
   .product-table { font-size: 13px; }
   .product-table th, .product-table td { padding: 10px 12px; }
-  .hero-banner img { max-height: 180px; }
+  
 }
 @media (max-width: 480px) {
-  .container { padding: 0 16px; }
+  .container { padding: 0 12px; }
   .product-table { font-size: 12px; display: block; overflow-x: auto; }
-  .hero-banner img { max-height: 120px; }
+  .brand-title { font-size: 12px; }
+  .header-brand .badge { font-size: 10px; padding: 1px 6px; }
+  .perf-card-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .perf-card-header .code { font-size: 11px; }
+  .perf-placeholder { padding: 18px 12px; font-size: 12px; }
+}
+  .product-table { font-size: 12px; display: block; overflow-x: auto; }
+  
 }
 </style>
 </head>
@@ -325,20 +381,12 @@ section + section { border-top: 1px solid var(--gray-200); }
 
 <header class="header">
   <div class="header-inner">
-    <div class="header-brand">
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect width="28" height="28" rx="6" fill="#d4af37"/>
-        <path d="M14 6 L18 12 L14 11 L10 12 Z" fill="#2d0f4a"/>
-        <circle cx="14" cy="16" r="5" fill="#2d0f4a" opacity=".85"/>
-        <path d="M12 16 L14 14 L16 16 L14 18 Z" fill="#d4af37"/>
-      </svg>
-      本周新发公募产品资料包      <span class="badge">非对客</span>
+    <div class="header-brand"><span class="brand-title">财富管理部——本周新发公募产品资料包</span><span class="badge">非对客</span>
     </div>
-    <span class="date-tag">2026.06.16 — 06.30</span>
     <nav>
       <a href="#market">市场观点</a>
       <a href="#products">产品列表</a>
-      <a href="#performance">历史业绩</a>
+      <a href="#performance">业绩测算</a>
       <a href="#disclaimer">风险提示</a>
     </nav>
   </div>
@@ -347,9 +395,7 @@ section + section { border-top: 1px solid var(--gray-200); }
 <section id="market">
   <div class="container">
     <div class="section-header">
-      <div class="tag">Section 01</div>
       <h2>市场观点</h2>
-      <p>0608-0612 市场回顾与展望</p>
     </div>
     <div class="market-editor">
       <div class="placeholder-icon">📑</div>
@@ -363,9 +409,7 @@ section + section { border-top: 1px solid var(--gray-200); }
 <section id="products">
   <div class="container">
     <div class="section-header">
-      <div class="tag">Section 02</div>
       <h2>产品列表</h2>
-      <p>本期在售 / 可关注理财产品一览</p>
     </div>
     <div class="product-table-wrap">
       <table class="product-table">
@@ -379,50 +423,80 @@ section + section { border-top: 1px solid var(--gray-200); }
         </thead>
         <tbody>
           <tr>
-            <td>阳光金丰利169期</td>
-            <td><span class="product-code">EW7771</span></td>
+            <td>阳光橙鑫盈打新策略优选目标盈17期（封闭式）</td>
+            <td><span class="product-code">EW8179</span></td>
+            <td><span class="product-type-badge badge-chengxin">橙系列</span></td>
+            <td>混合类</td>
+          </tr>
+          <tr>
+            <td>阳光金丰利长安1228期</td>
+            <td><span class="product-code">EW8229</span></td>
             <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
             <td>固定收益类</td>
           </tr>
           <tr>
-            <td>阳光金丰利171期（长者）</td>
-            <td><span class="product-code">EW7773</span></td>
+            <td>阳光金丰利1163期</td>
+            <td><span class="product-code">EW7765</span></td>
             <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
             <td>固定收益类</td>
           </tr>
           <tr>
-            <td>阳光橙盈利打新策略优选目标盈7期（封闭式）</td>
-            <td><span class="product-code">EW5487</span></td>
-            <td><span class="product-type-badge badge-chengxin">橙盈利</span></td>
-            <td>混合类（打新策略）</td>
-          </tr>
-          <tr>
-            <td>阳光金丰利154期</td>
-            <td><span class="product-code">EW7756</span></td>
-            <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
-            <td>固定收益类</td>
-          </tr>
-          <tr>
-            <td>阳光金丰利162期</td>
-            <td><span class="product-code">EW7764</span></td>
-            <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
-            <td>固定收益类</td>
-          </tr>
-          <tr>
-            <td>阳光金丰利155期（长者）</td>
-            <td><span class="product-code">EW7757</span></td>
-            <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
-            <td>固定收益类</td>
-          </tr>
-          <tr>
-            <td>阳光金创盈乐享目标盈21期（封闭式）</td>
-            <td><span class="product-code">EW7802</span></td>
+            <td>阳光金创盈乐盈目标盈22期（封闭式）</td>
+            <td><span class="product-code">EW7803</span></td>
             <td><span class="product-type-badge badge-chengying">创盈系列</span></td>
-            <td>权益/混合类</td>
+            <td>固定收益类（目标盈）</td>
           </tr>
           <tr>
-            <td>阳光金乐盈目标盈19期（封闭式）</td>
-            <td><span class="product-code">EW7799</span></td>
+            <td>阳光橙安盈增强欣享22期（封闭式）</td>
+            <td><span class="product-code">EW8191</span></td>
+            <td><span class="product-type-badge badge-chengxin">橙系列</span></td>
+            <td>混合类</td>
+          </tr>
+          <tr>
+            <td>阳光金丰利1229期</td>
+            <td><span class="product-code">EW8230</span></td>
+            <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
+            <td>固定收益类</td>
+          </tr>
+          <tr>
+            <td>阳光金乐盈目标盈20期</td>
+            <td><span class="product-code">EW7800</span></td>
+            <td><span class="product-type-badge badge-leying">乐盈系列</span></td>
+            <td>固定收益类（目标盈）</td>
+          </tr>
+          <tr>
+            <td>阳光金丰利长安1230期</td>
+            <td><span class="product-code">EW8231</span></td>
+            <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
+            <td>固定收益类</td>
+          </tr>
+          <tr>
+            <td>阳光金丰利1130期D（跟销）</td>
+            <td><span class="product-code">EW7709</span></td>
+            <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
+            <td>固定收益类</td>
+          </tr>
+          <tr>
+            <td>阳光金丰利1183期D（跟销）</td>
+            <td><span class="product-code">EW7904</span></td>
+            <td><span class="product-type-badge badge-fengli">丰利系列</span></td>
+            <td>固定收益类</td>
+          </tr>
+          <tr>
+            <td>阳光金安心计划166期</td>
+            <td><span class="product-code">EW7740</span></td>
+            <td><span class="product-type-badge badge-anxin">安心系列</span></td>
+            <td>固定收益类</td>
+          </tr>
+          <tr>
+            <td>阳光橙安盈增强11号（15M定开）</td>
+            <td><span class="product-code">EW8188</span></td>
+            <td><span class="product-type-badge badge-chengxin">橙系列</span></td>
+            <td>混合类</td>
+          </tr>
+          <tr>
+            <td>阳光金乐盈目标盈21期（封闭式）</td>
+            <td><span class="product-code">EW8262</span></td>
             <td><span class="product-type-badge badge-leying">乐盈系列</span></td>
             <td>固定收益类（目标盈）</td>
           </tr>
@@ -436,9 +510,7 @@ section + section { border-top: 1px solid var(--gray-200); }
 <section id="performance">
   <div class="container">
     <div class="section-header">
-      <div class="tag">Section 03</div>
-      <h2>历史业绩</h2>
-      <p>底层测算收益及同系列历史业绩参考</p>
+      <h2>业绩测算</h2>
     </div>
     <div class="perf-grid">
       <div class="perf-card">
@@ -454,11 +526,7 @@ section + section { border-top: 1px solid var(--gray-200); }
           <div class="subsection">
             <div class="subsection-label">同系列历史业绩</div>
             <div class="perf-placeholder">同系列历史净值 / 收益图表待补充</div>
-          </div>
-          <div class="perf-note">本收益测算及业绩比较基准是管理人基于当前市场、产品性质、投资策略、过往经验等因素对产品设定的投资目标，不代表产品的未来表现和实际收益，不构成对产品收益的承诺。</div>
-        </div>
-      </div>
-      <div class="perf-card">
+          </div></div></div><div class="perf-card">
         <div class="perf-card-header">
           <span class="name">阳光金丰利171期（长者）</span>
           <span class="code">EW7773</span>
@@ -471,11 +539,7 @@ section + section { border-top: 1px solid var(--gray-200); }
           <div class="subsection">
             <div class="subsection-label">同系列历史业绩</div>
             <div class="perf-placeholder">同系列历史净值 / 收益图表待补充</div>
-          </div>
-          <div class="perf-note">本收益测算及业绩比较基准是管理人基于当前市场、产品性质、投资策略、过往经验等因素对产品设定的投资目标，不代表产品的未来表现和实际收益，不构成对产品收益的承诺。</div>
-        </div>
-      </div>
-      <div class="perf-card">
+          </div></div></div><div class="perf-card">
         <div class="perf-card-header">
           <span class="name">阳光橙盈利打新策略优选目标盈7期</span>
           <span class="code">EW5487</span>
@@ -488,11 +552,7 @@ section + section { border-top: 1px solid var(--gray-200); }
           <div class="subsection">
             <div class="subsection-label">同系列历史业绩</div>
             <div class="perf-placeholder">同系列历史净值 / 收益图表待补充</div>
-          </div>
-          <div class="perf-note">本收益测算及业绩比较基准是管理人基于当前市场、产品性质、投资策略、过往经验等因素对产品设定的投资目标，不代表产品的未来表现和实际收益，不构成对产品收益的承诺。</div>
-        </div>
-      </div>
-      <div class="perf-card">
+          </div></div></div><div class="perf-card">
         <div class="perf-card-header">
           <span class="name">阳光金丰利154期</span>
           <span class="code">EW7756</span>
@@ -505,11 +565,7 @@ section + section { border-top: 1px solid var(--gray-200); }
           <div class="subsection">
             <div class="subsection-label">同系列历史业绩</div>
             <div class="perf-placeholder">同系列历史净值 / 收益图表待补充</div>
-          </div>
-          <div class="perf-note">本收益测算及业绩比较基准是管理人基于当前市场、产品性质、投资策略、过往经验等因素对产品设定的投资目标，不代表产品的未来表现和实际收益，不构成对产品收益的承诺。</div>
-        </div>
-      </div>
-      <div class="perf-card">
+          </div></div></div><div class="perf-card">
         <div class="perf-card-header">
           <span class="name">阳光金丰利162期</span>
           <span class="code">EW7764</span>
@@ -522,11 +578,7 @@ section + section { border-top: 1px solid var(--gray-200); }
           <div class="subsection">
             <div class="subsection-label">同系列历史业绩</div>
             <div class="perf-placeholder">同系列历史净值 / 收益图表待补充</div>
-          </div>
-          <div class="perf-note">本收益测算及业绩比较基准是管理人基于当前市场、产品性质、投资策略、过往经验等因素对产品设定的投资目标，不代表产品的未来表现和实际收益，不构成对产品收益的承诺。</div>
-        </div>
-      </div>
-      <div class="perf-card">
+          </div></div></div><div class="perf-card">
         <div class="perf-card-header">
           <span class="name">阳光金丰利155期（长者）</span>
           <span class="code">EW7757</span>
@@ -539,11 +591,7 @@ section + section { border-top: 1px solid var(--gray-200); }
           <div class="subsection">
             <div class="subsection-label">同系列历史业绩</div>
             <div class="perf-placeholder">同系列历史净值 / 收益图表待补充</div>
-          </div>
-          <div class="perf-note">本收益测算及业绩比较基准是管理人基于当前市场、产品性质、投资策略、过往经验等因素对产品设定的投资目标，不代表产品的未来表现和实际收益，不构成对产品收益的承诺。</div>
-        </div>
-      </div>
-      <div class="perf-card">
+          </div></div></div><div class="perf-card">
         <div class="perf-card-header">
           <span class="name">阳光金创盈乐享目标盈21期</span>
           <span class="code">EW7802</span>
@@ -556,11 +604,7 @@ section + section { border-top: 1px solid var(--gray-200); }
           <div class="subsection">
             <div class="subsection-label">同系列历史业绩</div>
             <div class="perf-placeholder">同系列历史净值 / 收益图表待补充</div>
-          </div>
-          <div class="perf-note">本收益测算及业绩比较基准是管理人基于当前市场、产品性质、投资策略、过往经验等因素对产品设定的投资目标，不代表产品的未来表现和实际收益，不构成对产品收益的承诺。</div>
-        </div>
-      </div>
-      <div class="perf-card">
+          </div></div></div><div class="perf-card">
         <div class="perf-card-header">
           <span class="name">阳光金乐盈目标盈19期</span>
           <span class="code">EW7799</span>
@@ -574,7 +618,7 @@ section + section { border-top: 1px solid var(--gray-200); }
             <div class="subsection-label">同系列历史业绩</div>
             <div class="perf-placeholder">同系列历史净值 / 收益图表待补充</div>
           </div>
-          <div class="perf-note">本收益测算及业绩比较基准是管理人基于当前市场、产品性质、投资策略、过往经验等因素对产品设定的投资目标，不代表产品的未来表现和实际收益，不构成对产品收益的承诺。</div>
+          
         </div>
       </div>
     </div>
@@ -584,9 +628,7 @@ section + section { border-top: 1px solid var(--gray-200); }
 <section id="disclaimer">
   <div class="container">
     <div class="section-header">
-      <div class="tag">Section 04</div>
       <h2>风险提示</h2>
-      <p>理财产品责任声明与风险告知</p>
     </div>
     <div class="disclaimer">
       <p>本材料由<strong>光大理财有限责任公司</strong>（简称光大理财）制作并提供，仅作为产品宣传使用，不作为任何法律文件，产品详情请以理财产品说明书为准。</p>
@@ -614,4 +656,9 @@ document.querySelectorAll('.header nav a').forEach(link => {
 </script>
 </body>
 </html>
+
+
+
+
+
 
